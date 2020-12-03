@@ -1,5 +1,8 @@
 const path = require('path')
 
+require('dotenv').config()
+const { API_KEY } = process.env
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -37,6 +40,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     'nuxt-typed-vuex',
+    '@nuxtjs/dotenv',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -61,4 +65,7 @@ export default {
       poll: true,
     },
   },
+  env: {
+    API_KEY
+  }
 }
