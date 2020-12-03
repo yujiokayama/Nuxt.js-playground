@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nuxt:
+    container_name: nuxt-app-container
+    image: nuxt-app-image
+    # buildで【.】を指定することで、同一ディレクトリのDockerfileを元にcontainerを作成
+    build: .
+    # portsでホストマシンの3000番portとコンテナの3000番portを照合
+    ports:
+      - 3000:3000
+    volumes:
+      # volumesで、ホストマシンのカレントディレクトリをコンテナの/appへマウント
+      - ./:/app
+      # Dockerfile(コンテナ内)でinstallしたnode_modulesが消えないように、/app/node_modulesをホストマシンにマウント
+      - /app/node_modules
+    # コンテナの永続化
+    tty: true
+    # working_dirでコマンドを実行するディレクトリを指定
+    working_dir: /app
+    # commandでコンテナが立ち上がったタイミングで、npm run dev命令を実行するように指定
+    command: npm run dev
