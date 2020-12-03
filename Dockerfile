@@ -1,5 +1,5 @@
 # FROM命令で、元となるimageを指定(node)
-FROM node:12.5.0-alpine
+FROM node:12.13.0-alpine
 
 # ENV命令で、環境変数を指定
 ENV LANG=C.UTF-8 TZ=Asia/Tokyo
