@@ -25,7 +25,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxt/typescript-build'
+    'nuxt-typed-vuex',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -38,5 +38,11 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    transpile: [/typed-vuex/],
+    extend(config, ctx) {},
+  },
 }
