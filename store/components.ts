@@ -1,27 +1,31 @@
 import { getterTree, mutationTree, actionTree } from 'typed-vuex'
+import axios from 'axios'
+import tableDataJSON from "~/assets/json/examples/table.json"
 
 export const state = () => ({
-  age: 37 as number,
+  tableData: [],
 })
 
 export type RootState = ReturnType<typeof state>
 
 export const getters = getterTree(state, {
-  age: (state) => state.age,
+  getTableData: (state) => {
+    return state.tableData
+  },
 })
 
 export const mutations = mutationTree(state, {
-  setAge(state, age: number): void {
-    state.age = age
+  setTableData(state, tableData): void {
+    state.tableData = tableData
   },
 })
 
 export const actions = actionTree(
   { state, getters, mutations },
   {
-    getOlder({ getters, commit }) {
-      const currentAge = getters.age
-      commit('setAge', currentAge + 1)
+    fetchTableData({ commit }) {
+      commit('setTableData', tableDataJSON)
     },
   }
 )
+

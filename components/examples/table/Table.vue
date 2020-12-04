@@ -1,22 +1,36 @@
 <template>
-  <div></div>
+  <div>
+    {{ tableData }}
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapGetters, mapActions } from 'vuex'
 
 export default Vue.extend({
   props: {
-    data: {
+    tableData: {
       type: Array,
       default: [],
       required: false,
     },
   },
   created() {},
-  mounted() {},
-  computed: {},
-  methods: {},
+  mounted() {
+    this.fetchTableData()
+  },
+  computed: {
+    ...mapGetters({
+      tableData: '/components/getTableData',
+    }),
+  },
+  methods: {
+    ...mapActions({
+      fetchTableData: 'components/fetchTableData',
+    }),
+    getEvent() {},
+  },
 })
 </script>
 

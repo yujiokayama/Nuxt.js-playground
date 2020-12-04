@@ -1,6 +1,7 @@
 import { getAccessorType } from 'typed-vuex'
 
 import * as post from '~/store/post'
+import * as components from '~/store/components'
 
 export const state = () => {
   return {}
@@ -25,5 +26,6 @@ export const accessorType = getAccessorType({
   actions,
   modules: {
     post,
+    components,
   },
 })
