@@ -11,14 +11,12 @@ export default Vue.extend({
   props: {
     test: {
       type: String,
-      default: 'テキスト',
+      default: '',
       required: false,
     },
   },
   created() {},
-  mounted() {
-    console.log(process.env.API_KEY)
-  },
+  mounted() {},
   computed: {},
   methods: {},
 })
