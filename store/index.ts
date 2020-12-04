@@ -1,6 +1,6 @@
 import { getAccessorType } from 'typed-vuex'
 
-import * as age from '~/store/age'
+import * as post from '~/store/post'
 
 export const state = () => {
   return {}
@@ -24,6 +24,6 @@ export const accessorType = getAccessorType({
   mutations,
   actions,
   modules: {
-    age,
+    post,
   },
 })

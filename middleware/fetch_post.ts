@@ -1,9 +1,11 @@
 import { Context } from '@nuxt/types'
 
-export default ({ redirect, app: { $accessor } }: Context) => {
+export default async ({ redirect, app: { $accessor } }: Context) => {
   // サーバーサイド
   if (process.server) {
-    // if () {}
+    if ($accessor.post.getPosts.length === 0) {
+      await $accessor.post.fetchPosts()
+    }
   }
   // クライアントサイド
   if (process.client) {

@@ -28,6 +28,11 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
 
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
+  router: {
+    middleware: ['fetch_post'],
+  },
+
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
@@ -64,6 +69,6 @@ export default {
     },
   },
   env: {
-    API_KEY
-  }
+    API_KEY,
+  },
 }

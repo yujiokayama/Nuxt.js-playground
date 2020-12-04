@@ -53,7 +53,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
-import Card from '~/components/examples/card/Card.vue'
+import Card from '~/components/card/Card.vue'
 
 export default Vue.extend({
   components: {
@@ -64,6 +64,7 @@ export default Vue.extend({
     return {}
   },
   created() {},
+  mounted() {},
 })
 </script>
 

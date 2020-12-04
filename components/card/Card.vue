@@ -310,11 +310,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    data: {
-      type: Array,
-      default: [],
-      required: false,
-    },
+    data: {},
   },
   created() {},
   mounted() {},
