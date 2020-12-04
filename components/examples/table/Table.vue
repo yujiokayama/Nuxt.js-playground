@@ -10,19 +10,21 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default Vue.extend({
   props: {
-    tableData: {
+    data: {
       type: Array,
-      default: [],
+      default: () => {
+        return []
+      },
       required: false,
     },
   },
-  created() {},
-  mounted() {
+  created() {
     this.fetchTableData()
   },
+  mounted() {},
   computed: {
     ...mapGetters({
-      tableData: '/components/getTableData',
+      tableData: 'components/getTableData',
     }),
   },
   methods: {

@@ -1,8 +1,27 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="container my-12 mx-auto px-4 md:px-12">
+    <Header />
+    <div class="md:flex items-center justify-between py-2 px-8 md:px-12">
+      <Nuxt />
+    </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Header from '~/components/Header.vue'
+
+export default Vue.extend({
+  components: {
+    Header,
+  },
+  data() {
+    return {}
+  },
+  created() {},
+  mounted() {},
+})
+</script>
 
 <style>
 html {

@@ -4,6 +4,7 @@ import tableDataJSON from "~/assets/json/examples/table.json"
 
 export const state = () => ({
   tableData: [],
+  test: 0 as number
 })
 
 export type RootState = ReturnType<typeof state>
@@ -12,10 +13,13 @@ export const getters = getterTree(state, {
   getTableData: (state) => {
     return state.tableData
   },
+  getTest: (state) => {
+    return state.test
+  }
 })
 
 export const mutations = mutationTree(state, {
-  setTableData(state, tableData): void {
+  setTableData(state, tableData) {
     state.tableData = tableData
   },
 })
