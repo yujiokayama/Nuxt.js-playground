@@ -2,7 +2,7 @@
   <div class="flex flex-col h-screen mt-10">
     <Header />
     <main class="flex-grow">
-      <Tags :tags="$accessor.components.getComponentsData" />
+      <Tags :tags="componentsData" />
       <Nuxt />
     </main>
     <Footer />
@@ -20,6 +20,11 @@ export default Vue.extend({
     Header,
     Tags,
     Footer,
+  },
+  data() {
+    return {
+      componentsData: this.$accessor.components.getComponentsData
+    }
   },
   created() {},
   mounted() {},

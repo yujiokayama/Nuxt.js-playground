@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ tableData }}
+    <p>table components</p>
   </div>
 </template>
 
