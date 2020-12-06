@@ -1,11 +1,6 @@
 <template>
   <div class="logo-components">
-    <svg
-      class="logo-svg"
-      width="40"
-      viewBox="0 0 452 342"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="40" viewBox="0 0 452 342" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M139 330l-1-2c-2-4-2-8-1-13H29L189 31l67 121 22-16-67-121c-1-2-9-14-22-14-6 0-15 2-22 15L5 303c-1 3-8 16-2 27 4 6 10 12 24 12h136c-14 0-21-6-24-12z"
         fill="#00C58E"
@@ -27,21 +22,14 @@
 .logo {
   &-components {
     display: flex;
-  }
-  &-svg {
     animation: 1s appear;
   }
   &-text {
     margin: 0 0 0 10px;
     font-weight: bold;
     font-size: 22px;
-    color: #00C58E; //非対応のブラウザでの文字色を設定
-    background: -webkit-linear-gradient(
-      top,
-      #00C58E,
-      #108775,
-      #2F495E
-    );
+    color: #00c58e; //非対応のブラウザでの文字色を設定
+    background: -webkit-linear-gradient(top, #00c58e, #108775, #2f495e);
     -webkit-background-clip: text; //テキストでくり抜く
     -webkit-text-fill-color: transparent; //くり抜いた部分は背景を表示
   }

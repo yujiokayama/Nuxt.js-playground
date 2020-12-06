@@ -1,22 +1,32 @@
 <template>
-  <div class="container my-12 mx-auto px-4 md:px-12">
+  <div class="flex flex-col h-screen mt-10">
     <Header />
-    <div class="md:flex items-center justify-between py-2 px-8 md:px-12">
+    <main class="flex-grow">
+      <Tags :tags="components" />
       <Nuxt />
-    </div>
+    </main>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Header from '~/components/Header.vue'
+import Tags from '~/components/Tags.vue'
+import Footer from '~/components/Footer.vue'
+
+import componentsJSON from '~/assets/json/examples/components.json'
 
 export default Vue.extend({
   components: {
     Header,
+    Tags,
+    Footer,
   },
   data() {
-    return {}
+    return {
+      components: componentsJSON
+    }
   },
   created() {},
   mounted() {},

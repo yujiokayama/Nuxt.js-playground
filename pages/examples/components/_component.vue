@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Table from "~/components/examples/table/Table.vue"
+import Table from '~/components/examples/table/Table.vue'
 
 export default Vue.extend({
   components: {
