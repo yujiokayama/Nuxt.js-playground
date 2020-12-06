@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-4xl mt-10 mx-auto px-5">
-    <component :is="getRouteParams" />
+    <component :is="matchComponents" />
     <Graph />
   </div>
 </template>
@@ -29,7 +29,7 @@ export default Vue.extend({
   created() {},
   mounted() {},
   computed: {
-    getRouteParams() {
+    matchComponents() {
       return (
         this.routeParams.component.charAt(0).toUpperCase() +
         this.routeParams.component.slice(1)
