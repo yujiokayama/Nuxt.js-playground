@@ -30,7 +30,7 @@ export default {
 
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
   router: {
-    middleware: ['fetch_post'],
+    middleware: ['fetch_post', 'fetch_components'],
   },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

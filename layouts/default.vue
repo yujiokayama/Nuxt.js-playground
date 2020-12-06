@@ -2,7 +2,7 @@
   <div class="flex flex-col h-screen mt-10">
     <Header />
     <main class="flex-grow">
-      <Tags :tags="components" />
+      <Tags :tags="$accessor.components.getComponentsData" />
       <Nuxt />
     </main>
     <Footer />
@@ -15,18 +15,11 @@ import Header from '~/components/Header.vue'
 import Tags from '~/components/Tags.vue'
 import Footer from '~/components/Footer.vue'
 
-import componentsJSON from '~/assets/json/examples/components.json'
-
 export default Vue.extend({
   components: {
     Header,
     Tags,
     Footer,
-  },
-  data() {
-    return {
-      components: componentsJSON
-    }
   },
   created() {},
   mounted() {},
