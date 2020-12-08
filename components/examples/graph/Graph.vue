@@ -1,11 +1,17 @@
 <template>
-  <div></div>
+  <div>
+    <Chart />
+  </div>
 </template>
 
 <script>
 import Vue from 'vue'
+import { Chart } from 'highcharts-vue'
 
 export default Vue.extend({
+  components: {
+    Chart,
+  },
   props: {
     test: {
       type: Array,

@@ -18,7 +18,9 @@ export default Vue.extend({
     return {}
   },
   created() {},
-  mounted() {},
+  mounted() {
+    console.log(process.env.NODE_ENV)
+  },
 })
 </script>
 

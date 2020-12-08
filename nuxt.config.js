@@ -2,6 +2,9 @@ require('dotenv').config()
 const { API_KEY } = process.env
 
 export default {
+  // https://ja.nuxtjs.org/docs/2.x/configuration-glossary/configuration-ssr
+  ssr: false,
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'vue-nuxt-playground',
@@ -26,7 +29,16 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/main.ts',
+      // mode: 'client', // client or server
+    },
+    {
+      src: '~/plugins/highcharts-vue.js',
+      // mode: 'client', // client or server
+    },
+  ],
 
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router
   router: {
@@ -43,6 +55,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     'nuxt-typed-vuex',
+    // https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
   ],
 
